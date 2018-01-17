@@ -4,6 +4,8 @@ import { withRouter, Link } from "react-router-dom";
 import logo from "../assets/NFCO_02.png";
 
 const NavWrapper = styled.div`
+  position: sticky;
+  top: 0;
   width: 100%;
   height: 62px;
   display: flex;
