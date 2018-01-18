@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import ali from '../assets/ali.JPG';
+import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Homepage = styled.div`
   min-height: 100vh;
@@ -16,6 +16,15 @@ const CategoryWrapper = styled.ul`
   padding: 0;
 `;
 
+const rotate360 = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
 const CategoryItem = styled.li`
   display: flex;
   flex-direction: column;
@@ -30,13 +39,15 @@ const CategoryItem = styled.li`
   -webkit-font-smoothing: antialiased;
   font-size: 20px;
   font-weight: 600;
-  transition: all 0.3s ease-in-out;
-  transform: translateY(0%);
 
   &:hover {
-    cursor: pointer;
+    transition: all 0.3s ease-in-out;
     flex: 3;
+    & > svg {
+      animation: ${rotate360} 2s linear infinite;
+    }
   }
+
   &:first-child {
     background: #4c3b4d;
   }
@@ -50,13 +61,24 @@ const CategoryItem = styled.li`
     background: #56a3a6;
   }
 `;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+  padding: 1rem 2rem 2rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
 export default class Home extends Component {
   render() {
     return (
       <Homepage>
         <CategoryWrapper>
           <CategoryItem>
-            About<br />
+            <StyledLink to="/about">About</StyledLink>
             <svg
               fill="#FFFFFF"
               height="48"
@@ -68,7 +90,7 @@ export default class Home extends Component {
             </svg>
           </CategoryItem>
           <CategoryItem>
-            Portfolio<br />
+            <StyledLink to="/about">Portfolio</StyledLink>
             <svg
               fill="#FFFFFF"
               height="48"
@@ -80,7 +102,7 @@ export default class Home extends Component {
             </svg>
           </CategoryItem>
           <CategoryItem>
-            Testimonial<br />
+            <StyledLink to="/about">Testimonial</StyledLink>
             <svg
               fill="#FFFFFF"
               height="48"
@@ -94,7 +116,7 @@ export default class Home extends Component {
             </svg>
           </CategoryItem>
           <CategoryItem>
-            Contact<br />
+            <StyledLink to="/about">Contact</StyledLink>
             <svg
               fill="#FFFFFF"
               height="48"
