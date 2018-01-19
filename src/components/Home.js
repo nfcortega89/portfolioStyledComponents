@@ -55,14 +55,6 @@ const CategoryItem = styled.li`
 
   &:first-child {
     background: #454851;
-    ${'' /* background-image: linear-gradient(
-        rgba(192, 214, 69, 0),
-        rgba(102, 97, 62, 0.33)
-      ),
-      url(${nikko});
-    background-size: cover;
-    background-position: 85%;
-    background-repeat: no-repeat; */};
   }
   &:nth-child(2) {
     background: #75485e;

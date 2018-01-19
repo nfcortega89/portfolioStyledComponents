@@ -26,7 +26,7 @@ from {
   width: 0;
 }
 to {
-  width: 454px;
+  width: 577px;
 }
 `;
 const Typing1 = keyframes`
@@ -34,7 +34,7 @@ from {
   width: 0;
 }
 to {
-  width: 330px;
+  width: 400px;
 }
 `;
 
@@ -48,7 +48,7 @@ from, to {
 `;
 
 const TestimonialHeader = styled.h1`
-  width: 454px;
+  width: 577px;
   font-size: 3em;
   color: white;
   -webkit-font-smoothing: antialiased;
@@ -60,7 +60,7 @@ const TestimonialHeader = styled.h1`
   animation: ${Typing} 1.6s steps(30, end), ${BlinkCaret} 0.75s infinite;
   @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
     font-size: 35px;
-    width: 330px;
+    width: 400px;
     margin: 0 auto;
     animation: ${Typing1} 1.6s steps(30, end), ${BlinkCaret} 0.75s infinite;
   }
