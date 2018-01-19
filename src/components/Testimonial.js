@@ -48,7 +48,7 @@ from, to {
 `;
 
 const TestimonialHeader = styled.h1`
-  width: 100px;
+  width: 454px;
   font-size: 3em;
   color: white;
   -webkit-font-smoothing: antialiased;
@@ -69,7 +69,7 @@ const ImageWrapper = styled.img`
   width: 125px;
   height: 125px;
   border-radius: 50%;
-  margin: 1em;
+  margin: 1em auto;
   @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
     width: 100px;
     height: 100px;
@@ -78,7 +78,9 @@ const ImageWrapper = styled.img`
 `;
 const TestimonialTextBlock = styled.div`
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   background: rgba(203, 144, 144, 0.45);
   padding: 5em;
   @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
