@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import Wrapper from './components/Container';
 import Header from './components/Header';
 import Home from './components/Home';

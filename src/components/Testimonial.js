@@ -62,14 +62,6 @@ const ImageWrapper = styled.img`
     transition: all 0.4s ease-in-out;
   }
 `;
-const Name = styled.p`
-  font-size: 16px;
-  color: white;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 900;
-`;
 const TestimonialTextBlock = styled.div`
   text-align: left
   display: flex;
@@ -78,7 +70,7 @@ const TestimonialTextBlock = styled.div`
   padding: 5em;
 `;
 const Testimonial = styled.p`
-  text-align: left;
+  text-align: justify;
   font-size: 16px;
   color: white;
   text-transform: uppercase;
@@ -100,15 +92,10 @@ const ContactP = styled.p`
   text-transform: uppercase;
 `;
 export default class TestimonialPage extends Component {
-  constructor(props) {
-    super(props);
-  }
-  onClickSlideIn() {}
   render() {
     return (
       <TestimonialWrapper>
         <TestimonialBlock>
-          {/* <Name>Arthur Longbottom</Name> */}
           <TestimonialTextBlock>
             <TestimonialHeader>
               {'{ '}Testimonial{' }'}

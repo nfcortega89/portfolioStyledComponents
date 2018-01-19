@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
-import nikko from '../assets/IMG_7615.JPG';
 
 const Homepage = styled.div`
   min-height: 100vh;
@@ -55,17 +54,18 @@ const CategoryItem = styled.li`
   }
 
   &:first-child {
-    background-image: linear-gradient(
+    background: #454851;
+    ${'' /* background-image: linear-gradient(
         rgba(192, 214, 69, 0),
         rgba(102, 97, 62, 0.33)
       ),
       url(${nikko});
     background-size: cover;
     background-position: 85%;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */};
   }
   &:nth-child(2) {
-    background: #c6d8af;
+    background: #75485e;
   }
   &:nth-child(3) {
     background: #ff5a5f;
