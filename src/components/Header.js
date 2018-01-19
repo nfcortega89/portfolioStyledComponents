@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const HamburgerMenu = styled.div`
+  z-index: 999;
   height: 50px;
   width: 50px;
   margin: 0;
