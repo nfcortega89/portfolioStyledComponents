@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 const Homepage = styled.div`
   min-height: 100vh;
   width: 100%;
+  background: grey;
 `;
 const CategoryWrapper = styled.ul`
   width: 100%;
@@ -39,6 +40,26 @@ const slideInFromUp = keyframes`
   transform: translateX(0);
 }
 `;
+const slideInFromLeft = keyframes`
+  0% {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+  100% {
+    opacity: 1;
+  transform: translateX(0);
+}
+`;
+const slideInFromRight = keyframes`
+  0% {
+  opacity: 0;
+  transform: translateX(+100%);
+}
+  100% {
+    opacity: 1;
+  transform: translateX(0);
+}
+`;
 
 const CategoryItem = styled.li`
   display: flex;
@@ -54,6 +75,7 @@ const CategoryItem = styled.li`
   -webkit-font-smoothing: antialiased;
   font-size: 20px;
   font-weight: 600;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     transition: all 0.3s ease-in-out;
@@ -66,18 +88,30 @@ const CategoryItem = styled.li`
   &:first-child {
     background: #454851;
     animation: 0.8s ease-in-out 0.4s 1 ${slideInFromUp};
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+      animation: 0.8s ease-in-out 0.4s 1 ${slideInFromLeft};
+    }
   }
   &:nth-child(2) {
     background: #75485e;
     animation: 0.8s ease-in-out 0.3s 1 ${slideInFromUp};
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+      animation: 0.8s ease-in-out 0.3s 1 ${slideInFromRight};
+    }
   }
   &:nth-child(3) {
     background: #ff5a5f;
     animation: 0.8s ease-in-out 0.5s 1 ${slideInFromUp};
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+      animation: 0.8s ease-in-out 0.5s 1 ${slideInFromLeft};
+    }
   }
   &:last-child {
     background: #56a3a6;
     animation: 0.8s ease-in-out 0.7s 1 ${slideInFromUp};
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+      animation: 0.8s ease-in-out 0.7s 1 ${slideInFromRight};
+    }
   }
 `;
 
