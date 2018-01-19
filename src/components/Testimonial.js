@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import art from '../assets/arthur.png';
 
 const TestimonialWrapper = styled.div`
@@ -19,16 +19,47 @@ const TestimonialBlock = styled.div`
   text-align: center;
   padding: 4em 4em;
 `;
+const Typing = keyframes`
+from {
+  width: 0;
+}
+to {
+  width: 454px;
+}
+`;
+
+const BlinkCaret = keyframes`
+from, to {
+  border-color: transparent
+}
+50% {
+  border-color: white;
+}
+`;
+
 const TestimonialHeader = styled.h1`
   font-size: 3em;
   color: white;
   -webkit-font-smoothing: antialiased;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid white; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: ${Typing} 1.6s steps(30, end), ${BlinkCaret} 0.75s infinite;
 `;
 const ImageWrapper = styled.img`
   width: 125px;
   height: 125px;
   border-radius: 50%;
   margin: 1em;
+  transition: all 0.4s ease-in-out
+
+  &:hover {
+    width: 150px;
+    height: 150px;
+    transition: all 0.4s ease-in-out;
+  }
 `;
 const Name = styled.p`
   font-size: 16px;
@@ -36,6 +67,7 @@ const Name = styled.p`
   letter-spacing: 1.2px;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
+  font-weight: 900;
 `;
 const Testimonial = styled.p`
   font-size: 16px;
@@ -59,7 +91,7 @@ export default class TestimonialPage extends Component {
       <TestimonialWrapper>
         <TestimonialBlock>
           <TestimonialHeader>
-            {'< '}Testimonial{' >'}
+            {'< '}Testimonial{' / >'}
           </TestimonialHeader>
           <ImageWrapper src={art} />
           <Name>Arthur Longbottom</Name>
