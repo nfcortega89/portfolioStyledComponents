@@ -6,7 +6,6 @@ const TestimonialWrapper = styled.div`
   background: #ff5a5f;
   width: 100%;
   min-height: 100vh;
-  transform: translateX(0%);
 `;
 const TestimonialBlock = styled.div`
   display: flex;
@@ -18,6 +17,9 @@ const TestimonialBlock = styled.div`
   justify-content: center;
   text-align: center;
   padding: 4em 4em;
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    padding: 0;
+  }
 `;
 const Typing = keyframes`
 from {
@@ -25,6 +27,14 @@ from {
 }
 to {
   width: 454px;
+}
+`;
+const Typing1 = keyframes`
+from {
+  width: 0;
+}
+to {
+  width: 330px;
 }
 `;
 
@@ -38,7 +48,7 @@ from, to {
 `;
 
 const TestimonialHeader = styled.h1`
-  width: 454px;
+  width: 100px;
   font-size: 3em;
   color: white;
   -webkit-font-smoothing: antialiased;
@@ -48,26 +58,34 @@ const TestimonialHeader = styled.h1`
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.15em; /* Adjust as needed */
   animation: ${Typing} 1.6s steps(30, end), ${BlinkCaret} 0.75s infinite;
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    font-size: 35px;
+    width: 330px;
+    margin: 0 auto;
+    animation: ${Typing1} 1.6s steps(30, end), ${BlinkCaret} 0.75s infinite;
+  }
 `;
 const ImageWrapper = styled.img`
   width: 125px;
   height: 125px;
   border-radius: 50%;
   margin: 1em;
-  transition: all 0.4s ease-in-out
-
-  &:hover {
-    width: 150px;
-    height: 150px;
-    transition: all 0.4s ease-in-out;
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 100px;
+    height: 100px;
+    margin: 1em auto;
   }
 `;
 const TestimonialTextBlock = styled.div`
-  text-align: left
   display: flex;
   justify-content: flex-start;
   background: rgba(203, 144, 144, 0.45);
   padding: 5em;
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    padding: 6em 0;
+    flex-direction: column;
+    align-items: left: ;
+  }
 `;
 const Testimonial = styled.p`
   text-align: justify;
@@ -79,6 +97,12 @@ const Testimonial = styled.p`
   letter-spacing: 1.2px;
   line-height: 33px;
   margin: 0;
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    padding: 0 4.5em;
+    text-align: left;
+    padding: 0 3.5em;
+    font-size: 12px;
+  }
 `;
 const Hl = styled.span`
   color: black;
@@ -90,6 +114,10 @@ const ContactP = styled.p`
   font-size: 16px;
   color: white;
   text-transform: uppercase;
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    padding: 0 2em;
+    font-size: 12px;
+  }
 `;
 export default class TestimonialPage extends Component {
   render() {
@@ -112,7 +140,8 @@ export default class TestimonialPage extends Component {
               work with as he constantly strives to achieve his goals creatively
               while using best practices. His ability to work through difficult
               problems is impressive and never gives up. I highly recommend
-              Nikko as a full-stack developer! <Hl>{' }'}</Hl>
+              Nikko as a full-stack developer! <br />
+              <Hl>{' }'}</Hl>
             </Testimonial>
           </TestimonialTextBlock>
         </TestimonialBlock>
