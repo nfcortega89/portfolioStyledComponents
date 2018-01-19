@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const AboutWrapper = styled.div`
-  background: #4c3b4d;
+  background: #f5bd00;
   width: 100%;
   min-height: 100vh;
 `;
