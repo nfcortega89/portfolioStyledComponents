@@ -15,6 +15,10 @@ const CategoryWrapper = styled.ul`
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const rotate360 = keyframes`

@@ -38,6 +38,7 @@ from, to {
 `;
 
 const TestimonialHeader = styled.h1`
+  width: 454px;
   font-size: 3em;
   color: white;
   -webkit-font-smoothing: antialiased;
@@ -69,17 +70,34 @@ const Name = styled.p`
   -webkit-font-smoothing: antialiased;
   font-weight: 900;
 `;
+const TestimonialTextBlock = styled.div`
+  text-align: left
+  display: flex;
+  justify-content: flex-start;
+  background: rgba(203, 144, 144, 0.45);
+  padding: 5em;
+`;
 const Testimonial = styled.p`
+  text-align: left;
   font-size: 16px;
   color: white;
   text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
-  padding: 0 15em;
+  padding: 0 16em;
   letter-spacing: 1.2px;
   line-height: 33px;
+  margin: 0;
 `;
 const Hl = styled.span`
   color: black;
+`;
+const ContactP = styled.p`
+  padding: 0 12em;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  color: white;
+  text-transform: uppercase;
 `;
 export default class TestimonialPage extends Component {
   constructor(props) {
@@ -90,19 +108,26 @@ export default class TestimonialPage extends Component {
     return (
       <TestimonialWrapper>
         <TestimonialBlock>
-          <TestimonialHeader>
-            {'< '}Testimonial{' / >'}
-          </TestimonialHeader>
-          <ImageWrapper src={art} />
-          <Name>Arthur Longbottom</Name>
-          <Testimonial>
-            Nikko is an <Hl>ambitious</Hl>, driven and excellent problem solver.
-            As his mentor, he has been an absolute pleasure to work with as he
-            constantly strives to achieve his goals <Hl>creatively</Hl> while
-            using best practices. His ability to work through difficult problems
-            is <Hl>impressive</Hl> and never gives up. I highly recommend Nikko
-            as a <Hl>full-stack developer</Hl>!
-          </Testimonial>
+          {/* <Name>Arthur Longbottom</Name> */}
+          <TestimonialTextBlock>
+            <TestimonialHeader>
+              {'{ '}Testimonial{' }'}
+            </TestimonialHeader>
+            <ImageWrapper src={art} />
+            <ContactP>
+              <Hl>const</Hl> testimonial = <Hl>{' { '}</Hl>
+              <br />
+            </ContactP>
+            <Testimonial>
+              <Hl>Name</Hl>: "Arthur Longbottom",<br />
+              <Hl>Message</Hl>: 'Nikko is an ambitious, driven and excellent
+              problem solver. As his mentor, he has been an absolute pleasure to
+              work with as he constantly strives to achieve his goals creatively
+              while using best practices. His ability to work through difficult
+              problems is impressive and never gives up. I highly recommend
+              Nikko as a full-stack developer! <Hl>{' }'}</Hl>
+            </Testimonial>
+          </TestimonialTextBlock>
         </TestimonialBlock>
       </TestimonialWrapper>
     );
