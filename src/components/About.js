@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import nikko from '../assets/IMG_7615.JPG';
+import nikko from '../assets/NO.jpg';
 
 const AboutWrapper = styled.div`
   background: ${props => props.bgColor};
@@ -11,9 +11,18 @@ const AboutWrapper = styled.div`
   align-items: center;
   text-align: center;
 `;
+const ImageWrapper = styled.img`
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+`;
 
 export default class AboutPage extends Component {
   render() {
-    return <AboutWrapper bgColor="#454851" />;
+    return (
+      <AboutWrapper bgColor="#454851">
+        <ImageWrapper src={nikko} />
+      </AboutWrapper>
+    );
   }
 }
