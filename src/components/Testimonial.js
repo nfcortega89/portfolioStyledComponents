@@ -131,11 +131,11 @@ export default class TestimonialPage extends Component {
               {'{ '}Testimonial{' }'}
             </TestimonialHeader>
             <ImageWrapper src={art} />
-            <ContactP>
-              <Hl>const</Hl> testimonial = <Hl>{' { '}</Hl>
-              <br />
-            </ContactP>
             <Testimonial>
+              <ContactP>
+                <Hl>const</Hl> testimonial = <Hl>{' { '}</Hl>
+                <br />
+              </ContactP>
               <Hl>Name</Hl>: "Arthur Longbottom",<br />
               <Hl>Message</Hl>: 'Nikko is an ambitious, driven and excellent
               problem solver. As his mentor, he has been an absolute pleasure to
